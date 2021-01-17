@@ -4,12 +4,12 @@ import java.util.ArrayList;
 //import java.util.Scanner;
 
 public class Game {
-	//private Board board;
+	private Board board;
 	private ArrayList<Piece> white;
 	private ArrayList<Piece> black;
 	private Piece piece;
 	public Game() {
-		//board = new Board();
+		board = new Board();
 		white = new ArrayList<Piece>();
 		black = new ArrayList<Piece>();
 		piece = null;
@@ -28,6 +28,7 @@ public class Game {
 		String pieceToMove = "Rf1";//scanner.nextLine();
 		this.setPieceToMove(pieceToMove);
 		//scanner.close();
+		this.board.setBoard(white, black);
 	}
 	
 	public void convertToPieces()
