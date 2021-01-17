@@ -47,22 +47,23 @@ public class Pawn extends Piece {
 				pX-=2;
 			}
 			
-//			if(spotX == 3 && !isWhite())
-//			{
-//				System.out.println(spot+this.toString());
-//			}
 			
 			if(spotX == pX && spotY == pY)
 			{
 				moves.add(spot);
 			}
 			
-			if(moveTwo) 
+			if(moveTwo && !moves.contains(spot)) 
 			{
 				if(!isWhite())
 				{
 					pX-=1;
 				}
+				else
+				{
+					pX+=1;
+				}
+				
 				if(spotX == pX && spotY == pY)
 				{
 					moves.add(spot);
