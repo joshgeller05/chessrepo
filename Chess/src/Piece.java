@@ -1,3 +1,5 @@
+import java.util.List;
+
 public abstract class Piece { 
   
     private boolean white = false; 
@@ -16,5 +18,7 @@ public abstract class Piece {
     { 
         this.white = white; 
     } 
+    
+    public abstract List<Spot> canMove(Board board); 
     
 } 
