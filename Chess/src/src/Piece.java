@@ -1,11 +1,13 @@
 package src;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Piece { 
 
 	private boolean white = false; 
-    private String column = "";
+    private int column = -1;
     private int row = -1;
+    protected ArrayList<Spot> moves = new ArrayList<Spot>();
     public Piece(boolean white) 
     { 
         this.setWhite(white); 
@@ -21,15 +23,15 @@ public abstract class Piece {
         this.white = white; 
     } 
     
-    public abstract List<Spot> canMove(Board board);
+    public abstract List<Spot> getMoves(Board board) throws Exception;
 
     public abstract PieceType type();
     
-	public String getColumn() {
+	public int getColumn() {
 		return column;
 	}
 
-	public void setColumn(String column) {
+	public void setColumn(int column) {
 		this.column = column;
 	}
 
@@ -46,7 +48,7 @@ public abstract class Piece {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((column == null) ? 0 : column.hashCode());
+		result = prime * result + column;
 		result = prime * result + row;
 		result = prime * result + (white ? 1231 : 1237);
 		return result;
@@ -61,10 +63,7 @@ public abstract class Piece {
 		if (getClass() != obj.getClass())
 			return false;
 		Piece other = (Piece) obj;
-		if (column == null) {
-			if (other.column != null)
-				return false;
-		} else if (!column.equals(other.column))
+		if (column != other.column)
 			return false;
 		if (row != other.row)
 			return false;
@@ -74,10 +73,25 @@ public abstract class Piece {
 			return false;
 		return true;
 	}
+	
+    public static String toAlphabetic(int i) {
+        if( i<0 ) {
+            return "-"+toAlphabetic(-i-1);
+        }
+
+        int quot = i/26;
+        int rem = i%26;
+        char letter = (char)((int)'A' + rem);
+        if( quot == 0 ) {
+            return ""+letter;
+        } else {
+            return toAlphabetic(quot-1) + letter;
+        }
+    }
 
 	public String toString()
 	{
-		return this.type()+" "+this.column+" "+this.row+" is white: "+this.isWhite();
+		return this.type()+" "+toAlphabetic(this.column)+" "+this.row+" is white: "+this.isWhite();
 	}
     
 } 

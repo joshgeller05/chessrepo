@@ -8,15 +8,16 @@ public class Knight extends Piece {
         super(white); 
     }
 
-	@Override
-	public List<Spot> canMove(Board board) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public PieceType type() {
 		return PieceType.KNIGHT;
+	}
+
+	@Override
+	public List<Spot> getMoves(Board board) throws Exception {
+		return moves;
 	} 
   
 }

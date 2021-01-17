@@ -9,7 +9,7 @@ public class King extends Piece {
     }
 
 	@Override
-	public List<Spot> canMove(Board board) {
+	public List<Spot> getMoves(Board board) {
 		// TODO Auto-generated method stub
 		return null;
 	}

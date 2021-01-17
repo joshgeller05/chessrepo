@@ -9,7 +9,7 @@ public class Queen extends Piece {
     }
 
 	@Override
-	public List<Spot> canMove(Board board) {
+	public List<Spot> getMoves(Board board) {
 		return null;
 	}
 

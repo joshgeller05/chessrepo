@@ -15,7 +15,7 @@ public class Game {
 		piece = null;
 	}
 	
-	public void start()
+	public void start() throws Exception
 	{
 		//Scanner scanner = new Scanner(System.in);
 		System.out.println("WHITE: ");
@@ -25,10 +25,37 @@ public class Game {
 		String blackPieces = "Kb8, Ne8, Pa7, Pb7, Pc7, Ra5";//scanner.nextLine();
 		this.setBlackPieces(blackPieces);
 		System.out.println("PIECE TO MOVE: ");
-		String pieceToMove = "Rf1";//scanner.nextLine();
+		String pieceToMove = "Pg3";//scanner.nextLine();
 		this.setPieceToMove(pieceToMove);
 		//scanner.close();
 		this.board.setBoard(white, black);
+		ArrayList<Spot> moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
+		
+		pieceToMove = "Ph2";//scanner.nextLine();
+		this.setPieceToMove(pieceToMove);
+		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
+		
+		pieceToMove = "Pf2";//scanner.nextLine();
+		this.setPieceToMove(pieceToMove);
+		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
+		
+		pieceToMove = "Pa7";//scanner.nextLine();
+		this.setPieceToMove(pieceToMove);
+		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
+		
+		pieceToMove = "Pb7";//scanner.nextLine();
+		this.setPieceToMove(pieceToMove);
+		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
+		
+		pieceToMove = "Pc7";//scanner.nextLine();
+		this.setPieceToMove(pieceToMove);
+		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
 	}
 	
 	public void convertToPieces()
@@ -67,7 +94,7 @@ public class Game {
 	public Piece getPiece(String str, boolean white)
 	{
 		Piece p = null;
-		String column = String.valueOf(str.charAt(1));
+		int column = this.convertColumn(String.valueOf(str.charAt(1)));
 		int row = Integer.parseInt(String.valueOf(str.charAt(2)));
 		if(str.startsWith("K"))
 		{
@@ -128,7 +155,19 @@ public class Game {
 				System.out.println("PIECE TO MOVE NOT IN WHITE OR BLACK LIST, GOODBYE");
 			}
 		}
-		System.out.println(piece);
 	}
+	
+    public int convertColumn(String column)
+    {
+    	char[] x = column.toCharArray();
+    	int result = -1;
+    	for(char c : x){
+    	    int temp = (int)c;
+    	    int temp_integer = 96; //for lower case
+    	    if(temp<=122 & temp>=97)
+    	        result =temp-temp_integer;
+    	}
+    	return result - 1;
+    }
 
 }

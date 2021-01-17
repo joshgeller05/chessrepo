@@ -7,47 +7,67 @@ public class Board {
   
     public Board() 
     { 
-    	board = new Spot[8][8];
+    	board = new Spot[9][9];
+    	this.setSpots();
     } 
     
     public Spot getSpot(int x, int y) throws Exception 
     { 
   
-        if (x < 0 || x > 8 || y < 0 || y > 8) { 
+        if (x < 0 || x >= 9 || y < 0 || y >= 9) { 
             throw new Exception("Index out of bound"); 
         } 
   
         return board[x][y]; 
     } 
     
+    public Piece getPieceAt(int x, int y) throws Exception
+    {
+    	Spot s = getSpot(x,y);
+    	return s.getPiece();
+    }
+    
+    public ArrayList<Spot> getSpots() throws Exception
+    {
+    	ArrayList<Spot> spots = new ArrayList<Spot>();
+		for(int i = 0; i < 8; i++)
+		{
+			for(int j = 0; j < 8; j++)
+			{
+				Spot spot = this.getSpot(i, j);
+				spots.add(spot);
+
+			}
+		}
+		return spots;
+    }
+    public void setSpots()
+    {
+		for(int i = 0; i < 8; i++)
+		{
+			for(int j = 0; j < 8; j++)
+			{
+				board[i][j] = new Spot(i,j,null);
+
+			}
+		}
+    }
+    
     public void setBoard(ArrayList<Piece> white, ArrayList<Piece> black)
     {
     	for(Piece p : white)
     	{
-    		int column = this.convertColumn(p.getColumn());
+    		int column = p.getColumn();
     		int row = p.getRow()-1;
     		board[row][column] = new Spot(row,column,p);
     	}
     	
     	for(Piece p : black)
     	{
-    		int column = this.convertColumn(p.getColumn());
+    		int column = p.getColumn();
     		int row = p.getRow()-1;
     		board[row][column] = new Spot(row,column,p);
     	}
-    }
-    
-    public int convertColumn(String column)
-    {
-    	char[] x = column.toCharArray();
-    	int result = -1;
-    	for(char c : x){
-    	    int temp = (int)c;
-    	    int temp_integer = 96; //for lower case
-    	    if(temp<=122 & temp>=97)
-    	        result =temp-temp_integer;
-    	}
-    	return result - 1;
     }
   
 } 
