@@ -1,8 +1,9 @@
+package src;
 import java.util.List;
 
-public class King extends Piece { 
+public class Rook extends Piece { 
   
-    public King(boolean white) 
+    public Rook(boolean white) 
     { 
         super(white); 
     }

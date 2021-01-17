@@ -1,3 +1,4 @@
+package src;
 public class Spot { 
     private Piece piece; 
     private int x; 

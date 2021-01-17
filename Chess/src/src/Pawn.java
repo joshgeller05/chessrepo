@@ -1,14 +1,16 @@
+package src;
 import java.util.List;
 
-public class Queen extends Piece { 
+public class Pawn extends Piece { 
   
-    public Queen(boolean white) 
+    public Pawn(boolean white) 
     { 
         super(white); 
     }
 
 	@Override
 	public List<Spot> canMove(Board board) {
+		// TODO Auto-generated method stub
 		return null;
 	} 
   
