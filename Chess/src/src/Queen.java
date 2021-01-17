@@ -11,6 +11,11 @@ public class Queen extends Piece {
 	@Override
 	public List<Spot> canMove(Board board) {
 		return null;
+	}
+
+	@Override
+	public PieceType type() {
+		return PieceType.QUEEN;
 	} 
   
 }
