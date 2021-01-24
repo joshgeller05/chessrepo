@@ -5,9 +5,10 @@ import java.util.List;
 public abstract class Piece { 
 
 	private boolean white = false; 
-    private int column = -1;
-    private int row = -1;
+    private int y = -1;
+    private int x = -1;
     protected ArrayList<Spot> moves = new ArrayList<Spot>();
+    protected ArrayList<Spot> collisions = new ArrayList<Spot>(); //where the piece has collided with other pieces
     public Piece(boolean white) 
     { 
         this.setWhite(white); 
@@ -27,20 +28,20 @@ public abstract class Piece {
 
     public abstract PieceType type();
     
-	public int getColumn() {
-		return column;
+	public int getY() {
+		return y;
 	}
 
-	public void setColumn(int column) {
-		this.column = column;
+	public void setY(int y) {
+		this.y = y;
 	}
 
-	public int getRow() {
-		return row;
+	public int getX() {
+		return x;
 	}
 
-	public void setRow(int row) {
-		this.row = row;
+	public void setX(int x) {
+		this.x = x;
 	} 
 	
 	
@@ -48,8 +49,8 @@ public abstract class Piece {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + column;
-		result = prime * result + row;
+		result = prime * result + y;
+		result = prime * result + x;
 		result = prime * result + (white ? 1231 : 1237);
 		return result;
 	}
@@ -63,9 +64,9 @@ public abstract class Piece {
 		if (getClass() != obj.getClass())
 			return false;
 		Piece other = (Piece) obj;
-		if (column != other.column)
+		if (y != other.y)
 			return false;
-		if (row != other.row)
+		if (x != other.x)
 			return false;
 		if (white != other.white)
 			return false;
@@ -91,7 +92,7 @@ public abstract class Piece {
 
 	public String toString()
 	{
-		return this.type()+" "+toAlphabetic(this.column)+" "+this.row+" is white: "+this.isWhite();
+		return this.type()+" "+toAlphabetic(this.y)+(this.x+1);
 	}
     
 } 

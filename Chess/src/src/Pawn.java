@@ -8,92 +8,52 @@ public class Pawn extends Piece {
         super(white); 
     }
 
-	@Override
 	public List<Spot> getMoves(Board board) throws Exception {
+		Spot start = new Spot(this.getX(),this.getY(),this);
 		for(Spot spot : board.getSpots())
 		{
-			canMove(spot,board);
+			if(canMove(start,spot))
+			{
+				moves.add(spot);
+			}
 		}
 		return moves;
 	} 
 	
-	public void canMove(Spot spot, Board board) throws Exception
+	public boolean canMove(Spot start, Spot end) throws Exception
 	{
-		Piece other = spot.getPiece();
-		boolean isDiagonalOne = isSpotDiagnol(spot);
-		if(other == null) //no piece in spot
-		{
-			boolean moveTwo = false;
-			int spotX = spot.getX();
-			int spotY = spot.getY();
-			int pX = this.getRow();
-			int pY = this.getColumn();
-			//if theres not piece in the spot
-			//check if the pawn is in its originating place
-			//if its not only can move 1 place, if not move 2
-			if(this.isWhite()) //if its white check the 2nd row, if its black check the 7th
-			{
-				if(this.getRow() == 2)
-				{
-					moveTwo = true;
-				}
-			}
-			else
-			{
-				if(this.getRow() == 7)
-				{
-					moveTwo = true;
-				}
-				pX-=2;
-			}
-			
-			
-			if(spotX == pX && spotY == pY)
-			{
-				moves.add(spot);
-			}
-			
-			if(moveTwo && !moves.contains(spot)) 
-			{
-				if(!isWhite())
-				{
-					pX-=1;
-				}
-				else
-				{
-					pX+=1;
-				}
-				
-				if(spotX == pX && spotY == pY)
-				{
-					moves.add(spot);
-				}
+		  if (end.getX() > 8 || end.getX() < 0 || end.getY() > 8 || end.getY() < 0) {
+				return false;
+		  }
 
-			}
-			
-		}
-		else
-		{
-			//TODO: CONFIRM  THIS
-			if(other.isWhite() != this.isWhite() && isDiagonalOne) //different colors
-			{
-				//if its diagonal one and theres a different color piece, take it
-				moves.add(spot);
-			}
-		}
+		  if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
+				//Can't kill or move over piece of same color
+				return false;
+		  }
+		  if (end.getPiece() != null && start.getX() == end.getX()) {
+				// can't kill piece moving forwards
+				return false;
+		  }
+
+		  if (start.getX() == end.getX() && Math.abs(end.getY() - start.getY()) <= 2) {
+				if (end.getY() > start.getY() && isWhite()) {
+					 return true;
+				} else
+					 return end.getY() < start.getY() && !isWhite();
+		  } else if (start.getX() == end.getX() && Math.abs(start.getY() - end.getY()) < 2) {
+				if (end.getY() > start.getY() && isWhite()) {
+					 return true;
+				} else
+					 return end.getY() < start.getY() && !isWhite();
+		  } else if (end.getX() == start.getX() - 1 || end.getX() == start.getX() + 1) {
+				if (end.getPiece() != null && end.getPiece().isWhite() != isWhite()) {
+					 return isWhite() ? end.getY() == start.getY() + 1 : end.getY() == start.getY() - 1;
+				}
+		  }
+
+		  return false;
 	}
 
-	private boolean isSpotDiagnol(Spot spot) {
-		int spotX = spot.getX();
-		int spotY = spot.getY();
-		int pX = this.getRow();
-		int pY = this.getColumn();
-		if((spotX ==pX && spotY == pY+1) || (spotX == pX && spotY == pY-1))
-		{
-			return true;
-		}
-		return false;
-	}
 
 	@Override
 	public PieceType type() {

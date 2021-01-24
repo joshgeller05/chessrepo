@@ -25,36 +25,11 @@ public class Game {
 		String blackPieces = "Kb8, Ne8, Pa7, Pb7, Pc7, Ra5";//scanner.nextLine();
 		this.setBlackPieces(blackPieces);
 		System.out.println("PIECE TO MOVE: ");
-		String pieceToMove = "Pg3";//scanner.nextLine();
+		String pieceToMove = "Rf1";//scanner.nextLine();
 		this.setPieceToMove(pieceToMove);
 		//scanner.close();
 		this.board.setBoard(white, black);
 		ArrayList<Spot> moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		
-		pieceToMove = "Ph2";//scanner.nextLine();
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		
-		pieceToMove = "Pf2";//scanner.nextLine();
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		
-		pieceToMove = "Pa7";//scanner.nextLine();
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		
-		pieceToMove = "Pb7";//scanner.nextLine();
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		
-		pieceToMove = "Pc7";//scanner.nextLine();
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
 		System.out.println(this.piece + " "+ moves);
 	}
 	
@@ -123,8 +98,8 @@ public class Game {
 		
 		if(null != p)
 		{
-			p.setColumn(column);
-			p.setRow(row);
+			p.setY(column);
+			p.setX(row-1);
 		}
 		return p;
 	}

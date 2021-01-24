@@ -7,18 +7,18 @@ public class Board {
   
     public Board() 
     { 
-    	board = new Spot[9][9];
-    	this.setSpots();
+    	board = new Spot[8][8];
+    	this.resetBoard();
     } 
     
     public Spot getSpot(int x, int y) throws Exception 
     { 
   
-        if (x < 0 || x >= 9 || y < 0 || y >= 9) { 
-            throw new Exception("Index out of bound"); 
-        } 
-  
-        return board[x][y]; 
+        try {
+            return board[x][y];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new RuntimeException("Spot out of bounds", e);
+        }
     } 
     
     public Piece getPieceAt(int x, int y) throws Exception
@@ -30,44 +30,49 @@ public class Board {
     public ArrayList<Spot> getSpots() throws Exception
     {
     	ArrayList<Spot> spots = new ArrayList<Spot>();
-		for(int i = 0; i < 8; i++)
-		{
-			for(int j = 0; j < 8; j++)
-			{
-				Spot spot = this.getSpot(i, j);
-				spots.add(spot);
-
-			}
-		}
+    	 for (int row = 0; row < board.length; row++) {
+    		    for (int col = 0; col < board.length; col++) {
+    		    	Spot s = board[row][col];
+    		    	spots.add(s);
+    		    }
+    		 }
 		return spots;
     }
-    public void setSpots()
+    public void resetBoard()
     {
-		for(int i = 0; i < 8; i++)
-		{
-			for(int j = 0; j < 8; j++)
-			{
-				board[i][j] = new Spot(i,j,null);
-
-			}
-		}
+        Spot[][] blankBoard = new Spot[8][8];
+        for (int i = 0; i < blankBoard.length; i++) {
+            for (int j = 0; j < blankBoard.length; j++) {
+                blankBoard[i][j] = new Spot(i, j, null);
+            }
+        }
+        this.setBoard(blankBoard);
+    }
+    
+    public void setBoard(Spot[][] board) {
+        this.board = board;
     }
     
     public void setBoard(ArrayList<Piece> white, ArrayList<Piece> black)
     {
     	for(Piece p : white)
     	{
-    		int column = p.getColumn();
-    		int row = p.getRow()-1;
+    		int column = p.getY();
+    		int row = p.getX();
     		board[row][column] = new Spot(row,column,p);
     	}
     	
     	for(Piece p : black)
     	{
-    		int column = p.getColumn();
-    		int row = p.getRow()-1;
+    		int column = p.getY();
+    		int row = p.getX();
     		board[row][column] = new Spot(row,column,p);
     	}
+    }
+    
+    public int getLength()
+    {
+    	return board.length;
     }
   
 } 
