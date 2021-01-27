@@ -6,22 +6,6 @@ public class Rook extends Piece {
     { 
         super(white); 
     }
-
-	@Override
-	public List<Spot> getMoves(Board board) throws Exception {
-		Spot start = new Spot(this.getX(),this.getY(),this);
-		for(Spot spot : board.getSpots())
-		{
-			if(!start.equals(spot))
-			{
-				if(this.canMove(start, spot, board))
-				{
-					moves.add(spot);
-				}	
-			}
-		}
-		return moves;
-	} 
 	
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{

@@ -1,5 +1,4 @@
 package src;
-import java.util.List;
 
 public class Knight extends Piece { 
   
@@ -16,8 +15,8 @@ public class Knight extends Piece {
 	}
 
 	@Override
-	public List<Spot> getMoves(Board board) throws Exception {
-		return moves;
+	public boolean canMove(Spot start, Spot end, Board board) throws Exception {
+		return false;
 	} 
   
 }

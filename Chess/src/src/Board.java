@@ -3,7 +3,7 @@ package src;
 import java.util.ArrayList;
 
 public class Board { 
-    Spot[][] board;
+    private Spot[][] board;
   
     public Board() 
     { 
@@ -46,11 +46,7 @@ public class Board {
                 blankBoard[i][j] = new Spot(i, j, null);
             }
         }
-        this.setBoard(blankBoard);
-    }
-    
-    public void setBoard(Spot[][] board) {
-        this.board = board;
+        this.board = blankBoard;
     }
     
     public void setBoard(ArrayList<Piece> white, ArrayList<Piece> black)

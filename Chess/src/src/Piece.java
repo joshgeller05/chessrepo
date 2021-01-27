@@ -8,7 +8,6 @@ public abstract class Piece {
     private int y = -1;
     private int x = -1;
     protected ArrayList<Spot> moves = new ArrayList<Spot>();
-    protected ArrayList<Spot> collisions = new ArrayList<Spot>(); //where the piece has collided with other pieces
     public Piece(boolean white) 
     { 
         this.setWhite(white); 
@@ -24,7 +23,22 @@ public abstract class Piece {
         this.white = white; 
     } 
     
-    public abstract List<Spot> getMoves(Board board) throws Exception;
+	public List<Spot> getMoves(Board board) throws Exception {
+		Spot start = new Spot(this.getX(),this.getY(),this);
+		for(Spot spot : board.getSpots())
+		{
+			if(!start.equals(spot))
+			{
+				if(this.canMove(start, spot, board))
+				{
+					moves.add(spot);
+				}	
+			}
+		}
+		return moves;
+	} 
+	
+	public abstract boolean canMove(Spot start, Spot end, Board board) throws Exception;
 
     public abstract PieceType type();
     

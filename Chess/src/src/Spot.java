@@ -55,18 +55,34 @@ public class Spot {
             return toAlphabetic(quot-1) + letter;
         }
     }
-    
-    public boolean equals(Spot other)
-    {
-        if (this == other) return true;
-        if (other == null || getClass() != other.getClass()) return false;
-        Spot spot = (Spot) other;
-        return x == spot.x &&
-                y == spot.y;
-    }
 
 	@Override
 	public String toString() {
 		return toAlphabetic(y)+String.valueOf(x+1);
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((piece == null) ? 0 : piece.hashCode());
+		result = prime * result + x;
+		result = prime * result + y;
+		return result;
+	}
+
+    @Override
+    public boolean equals(Object other)
+    {
+        if (other == null || getClass() != other.getClass()) {
+        	return false;
+        }
+        else
+        {
+            Spot spot = (Spot) other;
+            return x == spot.x &&
+                    y == spot.y;        	
+        }
+
+    }
 } 

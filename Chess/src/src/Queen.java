@@ -9,13 +9,13 @@ public class Queen extends Piece {
     }
 
 	@Override
-	public List<Spot> getMoves(Board board) {
-		return null;
+	public PieceType type() {
+		return PieceType.QUEEN;
 	}
 
 	@Override
-	public PieceType type() {
-		return PieceType.QUEEN;
+	public boolean canMove(Spot start, Spot end, Board board) throws Exception {
+		return false;
 	} 
   
 }

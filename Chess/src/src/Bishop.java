@@ -7,11 +7,10 @@ public class Bishop extends Piece {
     { 
         super(white); 
     }
-
-	@Override
-	public List<Spot> getMoves(Board board) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public boolean canMove(Spot start, Spot end, Board board) throws Exception
+	{
+		return false;
 	}
 
 	@Override
