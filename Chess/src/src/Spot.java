@@ -1,5 +1,5 @@
 package src;
-public class Spot { 
+public class Spot implements Comparable{ 
     private Piece piece; 
     private int x; 
     private int y; 
@@ -55,6 +55,18 @@ public class Spot {
             return toAlphabetic(quot-1) + letter;
         }
     }
+    
+    public boolean isValid()
+    {
+    	boolean result = true;
+    	
+    	if(this.getX() > 8 || this.getX() < 0 || this.getY() > 8 || this.getY() < 0)
+    	{
+    		result = false;
+    	}
+    	
+    	return result;
+    }
 
 	@Override
 	public String toString() {
@@ -85,4 +97,11 @@ public class Spot {
         }
 
     }
+
+	@Override
+	public int compareTo(Object other) {
+		int compareY = ((Spot) other).getY();
+		
+		return this.getY() - compareY;
+	}
 } 

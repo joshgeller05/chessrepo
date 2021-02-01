@@ -1,5 +1,6 @@
 package src;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class Piece { 
@@ -23,11 +24,14 @@ public abstract class Piece {
         this.white = white; 
     } 
     
+	@SuppressWarnings("unchecked")
 	public List<Spot> getMoves(Board board) throws Exception {
 		Spot start = new Spot(this.getX(),this.getY(),this);
 		for(Spot spot : board.getSpots())
 		{
-			if(!start.equals(spot))
+			//check that the spot does not equal where the piece is
+			//check that the spot is valid
+			if(!start.equals(spot) && spot.isValid())
 			{
 				if(this.canMove(start, spot, board))
 				{
@@ -35,6 +39,7 @@ public abstract class Piece {
 				}	
 			}
 		}
+		Collections.sort(moves);
 		return moves;
 	} 
 	

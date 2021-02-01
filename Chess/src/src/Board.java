@@ -17,7 +17,7 @@ public class Board {
         try {
             return board[x][y];
         } catch (ArrayIndexOutOfBoundsException e) {
-            throw new RuntimeException("Spot out of bounds", e);
+            throw new RuntimeException("Spot out of bounds "+x+" "+y, e);
         }
     } 
     

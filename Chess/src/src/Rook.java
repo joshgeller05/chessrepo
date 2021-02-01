@@ -8,12 +8,11 @@ public class Rook extends Piece {
 	
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{
-        if(end.getPiece() != null) {
-            if (end.getPiece().isWhite() == this.isWhite()) {
-                // can't kill piece of same color
-                return false;
-            }
-        }
+		if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
+			// can't kill piece of same color
+			return false;
+		}
+		
 		if(start.getX() == end.getX())
 		{
 			//moving horizontally
