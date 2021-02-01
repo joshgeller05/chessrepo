@@ -83,6 +83,20 @@ public class Spot implements Comparable{
 		return result;
 	}
 
+	public boolean equals(String spot)
+	{
+		boolean result = false;
+		
+		String column = (String.valueOf(spot.charAt(0)).toLowerCase());
+		int row = Integer.parseInt(String.valueOf(spot.charAt(1)))-1;
+		int col = this.convertColumn(column);
+		if(this.getX() == row && this.getY() == col)
+		{
+			result = true;
+		}
+		
+		return result;
+	}
     @Override
     public boolean equals(Object other)
     {
@@ -104,4 +118,29 @@ public class Spot implements Comparable{
 		
 		return this.getY() - compareY;
 	}
+	
+	public boolean hasSameColorPiece(Piece p)
+	{
+		if(this.getPiece() != null)
+		{
+	        if (this.getPiece().isWhite() == p.isWhite()) {
+	        	//cant move ontop of piece of the same color
+	            return true;
+	        }
+		}
+        return false;
+	}
+	
+    public int convertColumn(String column)
+    {
+    	char[] x = column.toCharArray();
+    	int result = -1;
+    	for(char c : x){
+    	    int temp = (int)c;
+    	    int temp_integer = 96; //for lower case
+    	    if(temp<=122 & temp>=97)
+    	        result =temp-temp_integer;
+    	}
+    	return result - 1;
+    }
 } 

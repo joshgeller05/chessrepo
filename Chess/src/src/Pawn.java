@@ -1,5 +1,4 @@
 package src;
-import java.util.List;
 
 public class Pawn extends Piece { 
   
@@ -10,10 +9,6 @@ public class Pawn extends Piece {
 	
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{	  		  
-		  if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
-				//Can't kill or move over piece of same color
-				return false;
-		  }
 		  if (end.getPiece() != null && start.getY() == end.getY()) {
 				// can't kill piece moving forwards
 				return false;

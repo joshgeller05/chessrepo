@@ -31,7 +31,7 @@ public abstract class Piece {
 		{
 			//check that the spot does not equal where the piece is
 			//check that the spot is valid
-			if(!start.equals(spot) && spot.isValid())
+			if(!start.equals(spot) && spot.isValid() && !spot.hasSameColorPiece(this))
 			{
 				if(this.canMove(start, spot, board))
 				{

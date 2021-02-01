@@ -9,11 +9,6 @@ public class Bishop extends Piece {
 	
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{
-        if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
-        	//cant move ontop of piece of the same color
-            return false;
-        }
-
         if (Math.abs(start.getY() - end.getY()) == Math.abs(start.getX() - end.getX())) {
             int xChange;
             int yChange;

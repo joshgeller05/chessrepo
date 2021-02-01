@@ -19,11 +19,6 @@ public class Knight extends Piece {
 
 	@Override
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception {
-	 	 if(end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
-	 		 //if the spot has a piece make sure its not the same color
-	 	 	 return false;
-		 }
-
 	 	 for(int i = 0; i < 8; i++) {
 	 		 //loop through the possible moves and see if the row/columns line up
 	 	 	 if(start.getY() + movesY[i] == end.getY() && start.getX() + movesX[i] == end.getX()) {

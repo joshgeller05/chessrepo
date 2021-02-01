@@ -19,7 +19,7 @@ public class Game {
 	{
 		//Scanner scanner = new Scanner(System.in);
 		System.out.println("WHITE: ");
-		String whitePieces = "Rf1, Kg1, Pf2, Ph2, Pg3, Pb6, Ne2, Bf5";// scanner.nextLine();
+		String whitePieces = "Rf1, Kg1, Pf2, Ph2, Pg3, Pb6, Ne2, Bf5, Qc4";// scanner.nextLine();
 		this.setWhitePieces(whitePieces);
 		System.out.println("BLACK: ");
 		String blackPieces = "Kb8, Ne8, Pa7, Pb7, Pc7, Ra5, Rc8, Pe3, Ph4, Bd6";//scanner.nextLine();
@@ -71,11 +71,10 @@ public class Game {
 		this.setPieceToMove(pieceToMove);
 		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
 		System.out.println(this.piece + " "+ moves);
-	}
-	
-	public void convertToPieces()
-	{
-		
+		pieceToMove = "Qc4";
+		this.setPieceToMove(pieceToMove);
+		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+		System.out.println(this.piece + " "+ moves);
 	}
 	
 	public void setWhitePieces(String pieces)
