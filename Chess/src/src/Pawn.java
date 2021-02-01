@@ -11,7 +11,7 @@ public class Pawn extends Piece {
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{	  
 		  if (end.getX() > 8 || end.getX() < 0 || end.getY() > 8 || end.getY() < 0) {
-				return false;
+			  return false;
 		  }
 		  
 		  if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
