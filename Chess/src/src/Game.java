@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 //import java.util.Scanner;
 
 public class Game {
@@ -17,64 +18,21 @@ public class Game {
 	
 	public void start() throws Exception
 	{
-		//Scanner scanner = new Scanner(System.in);
-		System.out.println("WHITE: ");
-		String whitePieces = "Rf1, Kg1, Pf2, Ph2, Pg3, Pb6, Ne2, Bf5, Qc4";// scanner.nextLine();
+		Scanner scanner = new Scanner(System.in,"UTF-8");
+		System.out.println("ENTER WHITE PIECES: ");
+		String whitePieces = scanner.nextLine(); //"Kg1, Pf2, Ph2, Pg3, Pb6, Ne2, Bf5, Qc4";// scanner.nextLine();
 		this.setWhitePieces(whitePieces);
-		System.out.println("BLACK: ");
-		String blackPieces = "Kb8, Ne8, Pa7, Pb7, Pc7, Ra5, Rc8, Pe3, Ph4, Bd6";//scanner.nextLine();
+		System.out.println("ENTER BLACK PIECES: ");
+		String blackPieces = scanner.nextLine();//"Kb8, Ne8, Bb7, Pc7, Ra5";//scanner.nextLine();
 		this.setBlackPieces(blackPieces);
-		System.out.println("PIECE TO MOVE: ");
-		String pieceToMove = "Rf1";//scanner.nextLine();
-		this.setPieceToMove(pieceToMove);
-		//scanner.close();
+		
 		this.board.setBoard(white, black);
+		System.out.println("ENTER PIECE TO MOVE: ");
+		String pieceToMove = scanner.nextLine();//"Kg1";
+		this.setPieceToMove(pieceToMove);
 		ArrayList<Spot> moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Pg3";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Pf2";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Pc7";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Pb7";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Pa7";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Ph2";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Ne8";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Ne2";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Bf5";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Bd6";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
-		pieceToMove = "Qc4";
-		this.setPieceToMove(pieceToMove);
-		moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " "+ moves);
+		System.out.println(this.piece + " can move to: "+ moves);
+		scanner.close();
 	}
 	
 	public void setWhitePieces(String pieces)
