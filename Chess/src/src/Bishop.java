@@ -36,8 +36,17 @@ public class Bishop extends Piece {
                 }
 
                 xIndex += xChange;
-                yIndex += yChange;
+                yIndex += yChange;            
+                
             }
+            
+        	if(end.getPiece() != null)
+        	{
+        		if(end.getPiece().isWhite() == this.isWhite())
+        		{
+        			return false;
+        		}
+        	}
 
             return true;
         } else {

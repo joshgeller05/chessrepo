@@ -24,6 +24,11 @@ public abstract class Piece {
         this.white = white; 
     } 
     
+    public void resetMoves()
+    {
+    	moves.clear();
+    }
+    
 	@SuppressWarnings("unchecked")
 	public List<Spot> getMoves(Board board) throws Exception {
 		Spot start = new Spot(this.getX(),this.getY(),this);

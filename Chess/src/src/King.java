@@ -17,6 +17,7 @@ public class King extends Piece {
 		boolean result = true;
 	        if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
 	            result = false;
+	            return false;
 	        }
 	        
 

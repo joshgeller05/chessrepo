@@ -121,7 +121,7 @@ public class Spot implements Comparable{
 	
 	public boolean hasSameColorPiece(Piece p)
 	{
-		if(this.getPiece() != null)
+		if(this.getPiece() != null && p != null)
 		{
 	        if (this.getPiece().isWhite() == p.isWhite()) {
 	        	//cant move ontop of piece of the same color

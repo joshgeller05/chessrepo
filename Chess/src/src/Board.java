@@ -66,6 +66,11 @@ public class Board {
     	}
     }
     
+    public void setSpot(Spot spot)
+    {
+    	board[spot.getX()][spot.getY()] = spot;
+    }
+    
     public int getLength()
     {
     	return board.length;

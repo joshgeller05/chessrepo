@@ -16,23 +16,34 @@ public class Game {
 		piece = null;
 	}
 	
-	public void start() throws Exception
+	public void start(boolean userInput, ArrayList<Piece> white, ArrayList<Piece> black, Piece piece) throws Exception
 	{
-		Scanner scanner = new Scanner(System.in,"UTF-8");
-		System.out.println("ENTER WHITE PIECES: ");
-		String whitePieces = scanner.nextLine(); //"Kg1, Pf2, Ph2, Pg3, Pb6, Ne2, Bf5, Qc4";// scanner.nextLine();
-		this.setWhitePieces(whitePieces);
-		System.out.println("ENTER BLACK PIECES: ");
-		String blackPieces = scanner.nextLine();//"Kb8, Ne8, Bb7, Pc7, Ra5";//scanner.nextLine();
-		this.setBlackPieces(blackPieces);
-		
-		this.board.setBoard(white, black);
-		System.out.println("ENTER PIECE TO MOVE: ");
-		String pieceToMove = scanner.nextLine();//"Kg1";
-		this.setPieceToMove(pieceToMove);
-		ArrayList<Spot> moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
-		System.out.println(this.piece + " can move to: "+ moves);
-		scanner.close();
+		if(userInput)
+		{
+			Scanner scanner = new Scanner(System.in,"UTF-8");
+			System.out.println("ENTER WHITE PIECES: ");
+			String whitePieces = scanner.nextLine(); //"Kg1, Pf2, Ph2, Pg3, Pb6, Ne2, Bf5, Qc4";// scanner.nextLine();
+			this.setWhitePieces(whitePieces);
+			System.out.println("ENTER BLACK PIECES: ");
+			String blackPieces = scanner.nextLine();//"Kb8, Ne8, Bb7, Pc7, Ra5";//scanner.nextLine();
+			this.setBlackPieces(blackPieces);
+			
+			this.board.setBoard(white, black);
+			System.out.println("ENTER PIECE TO MOVE: ");
+			String pieceToMove = scanner.nextLine();//"Kg1";
+			this.setPieceToMove(pieceToMove);
+			ArrayList<Spot> moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+			System.out.println(this.piece + " can move to: "+ moves);
+			scanner.close();
+		}
+		else
+		{
+			this.setWhite(white);
+			this.setBlack(black);
+			this.piece = piece;
+			ArrayList<Spot> moves = (ArrayList<Spot>) this.piece.getMoves(this.board);
+			System.out.println(this.piece + " can move to: "+ moves);			
+		}
 	}
 	
 	public void setWhitePieces(String pieces)
@@ -124,6 +135,7 @@ public class Game {
 			}
 			if(!isFound)
 			{
+				piece = null;
 				System.out.println("PIECE TO MOVE NOT IN WHITE OR BLACK LIST, GOODBYE");
 			}
 		}
@@ -141,5 +153,35 @@ public class Game {
     	}
     	return result - 1;
     }
+
+	public ArrayList<Piece> getWhite() {
+		return white;
+	}
+
+	public void setWhite(ArrayList<Piece> white) {
+		this.white = white;
+	}
+
+	public ArrayList<Piece> getBlack() {
+		return black;
+	}
+
+	public void setBlack(ArrayList<Piece> black) {
+		this.black = black;
+	}
+	
+	public void resetWhite()
+	{
+		white.clear();
+	}
+	
+	public void resetBlack()
+	{
+		black.clear();
+	}
+
+	public Piece getPieceToMove() {
+		return piece;
+	}
 
 }

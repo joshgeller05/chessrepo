@@ -13,7 +13,7 @@ public class Rook extends Piece {
 		{
 			//moving horizontally
 			if(start.getY() > end.getY()) {
-				for(int i = start.getY() - 1; i > end.getY(); i--) {
+				for(int i = start.getY() - 1; i >= end.getY(); i--) {
 					Piece p = board.getSpot(start.getX(), i).getPiece();
 					if(p != null) {
 						//if there are pieces in the way
@@ -21,7 +21,7 @@ public class Rook extends Piece {
 					}
 				}
 			} else {
-				for(int i = start.getY() + 1; i < end.getY(); i++) {
+				for(int i = start.getY() + 1; i <= end.getY(); i++) {
 					Piece p = board.getSpot(start.getX(), i).getPiece();
 					if (p != null) {
 						//if there are pieces in the way
@@ -34,7 +34,7 @@ public class Rook extends Piece {
 		{
 			//moving vertically
             if(start.getX() > end.getX()) {
-                for(int i = start.getX() - 1; i > end.getX(); i--) {
+                for(int i = start.getX() - 1; i >= end.getX(); i--) {
                 	Piece p = board.getSpot(i, start.getY()).getPiece();
                     if(p != null) {
                         //if there are pieces in the way
@@ -42,7 +42,7 @@ public class Rook extends Piece {
                     }
                 }
             } else {
-                for(int i = start.getX() + 1; i < end.getX(); i++) {
+                for(int i = start.getX() + 1; i <= end.getX(); i++) {
                 	Piece p = board.getSpot(i, start.getY()).getPiece();
                     if (p != null) {
                         //if there are pieces in the way

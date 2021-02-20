@@ -22,7 +22,17 @@ public class Knight extends Piece {
 	 	 for(int i = 0; i < 8; i++) {
 	 		 //loop through the possible moves and see if the row/columns line up
 	 	 	 if(start.getY() + movesY[i] == end.getY() && start.getX() + movesX[i] == end.getX()) {
-	 	 	 	 return true;
+	 	 		 if(end.getPiece() == null)
+	 	 		 {
+	 	 			return true;
+	 	 		 }
+	 	 		 else
+	 	 		 {
+	 	 			 if(end.getPiece().isWhite() != this.isWhite())
+	 	 			 {
+	 	 				 return true;
+	 	 			 }
+	 	 		 }
 			 }
 		 }
 

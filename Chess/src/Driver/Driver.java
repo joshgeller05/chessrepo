@@ -1,10 +1,12 @@
-package src;
+package Driver;
+
+import src.Game;
 
 public class Driver {
 
 	public static void main(String[] args) throws Exception {
 		Game game = new Game();
-		game.start();
+		game.start(true,null,null,null);
 
 	}
 
