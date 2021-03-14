@@ -7,6 +7,10 @@ public class Bishop extends Piece {
         super(white); 
     }
 	
+    /**
+     * can move implementation for the bishop
+     * return - whether or not the bishop can move to the end spot
+     */
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{
         if (Math.abs(start.getY() - end.getY()) == Math.abs(start.getX() - end.getX())) {

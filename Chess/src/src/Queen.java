@@ -12,6 +12,10 @@ public class Queen extends Piece {
 		return PieceType.QUEEN;
 	}
 
+    /**
+     * can move implementation for the queen
+     * return - whether or not the queen can move to the end spot
+     */
 	@Override
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception {
 		  //checking if it can move up and down

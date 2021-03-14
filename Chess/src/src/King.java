@@ -12,6 +12,10 @@ public class King extends Piece {
 		return PieceType.KING;
 	}
 
+    /**
+     * can move implementation for the king
+     * return - whether or not the king can move to the end spot
+     */
 	@Override
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception {
 		boolean result = true;

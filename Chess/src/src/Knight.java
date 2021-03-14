@@ -17,6 +17,10 @@ public class Knight extends Piece {
 		return PieceType.KNIGHT;
 	}
 
+    /**
+     * can move implementation for the knight
+     * return - whether or not the knight can move to the end spot
+     */
 	@Override
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception {
 	 	 for(int i = 0; i < 8; i++) {

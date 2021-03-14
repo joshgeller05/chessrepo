@@ -11,36 +11,65 @@ public class Spot implements Comparable{
         this.setY(y); 
     } 
   
+    /**
+     * 
+     * @return - return the spots piece
+     */
     public Piece getPiece() 
     { 
         return this.piece; 
     } 
   
+    /**
+     * sets the spots piece
+     * @param p - piece for the spot
+     */
     public void setPiece(Piece p) 
     { 
         this.piece = p; 
     } 
   
+    /**
+     * 
+     * @return - the spots x position
+     */
     public int getX() 
     { 
         return this.x; 
     } 
   
+    /**
+     * sets the spots x position
+     * @param x position to set
+     */
     public void setX(int x) 
     { 
         this.x = x; 
     } 
   
+    /**
+     * 
+     * @return - the spots y position
+     */
     public int getY() 
     { 
         return this.y; 
     } 
   
+    /**
+     * sets the spots y position
+     * @param y position to set
+     */
     public void setY(int y) 
     { 
         this.y = y; 
     } 
     
+    /**
+     * convert the given position to a letter
+     * @param i - integer to convert to a letter
+     * @return - letter for given integer
+     */
     public static String toAlphabetic(int i) {
         if( i<0 ) {
             return "-"+toAlphabetic(-i-1);
@@ -56,6 +85,10 @@ public class Spot implements Comparable{
         }
     }
     
+    /**
+     * 
+     * @return - whether or not spot is valid
+     */
     public boolean isValid()
     {
     	boolean result = true;
@@ -83,6 +116,11 @@ public class Spot implements Comparable{
 		return result;
 	}
 
+	/**
+	 * 
+	 * @param spot as a string
+	 * @return - if this spot is equal to given string spot
+	 */
 	public boolean equals(String spot)
 	{
 		boolean result = false;
@@ -97,6 +135,7 @@ public class Spot implements Comparable{
 		
 		return result;
 	}
+	
     @Override
     public boolean equals(Object other)
     {
@@ -119,6 +158,11 @@ public class Spot implements Comparable{
 		return this.getY() - compareY;
 	}
 	
+	/**
+	 * 
+	 * @param p - piece to compare
+	 * @return - if this spot has same color piece as given piece
+	 */
 	public boolean hasSameColorPiece(Piece p)
 	{
 		if(this.getPiece() != null && p != null)
@@ -131,6 +175,11 @@ public class Spot implements Comparable{
         return false;
 	}
 	
+	/**
+	 * 
+	 * @param column - column as a string
+	 * @return column as an int
+	 */
     public int convertColumn(String column)
     {
     	char[] x = column.toCharArray();

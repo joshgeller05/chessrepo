@@ -6,6 +6,10 @@ public class Rook extends Piece {
         super(white); 
     }
 	
+    /**
+     * can move implementation for the rook
+     * return - whether or not the rook can move to the end spot
+     */
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{
 		

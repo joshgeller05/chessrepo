@@ -7,6 +7,10 @@ public class Pawn extends Piece {
         super(white); 
     }
 	
+    /**
+     * can move implementation for the pawn
+     * return - whether or not the pawn can move to the end spot
+     */
 	public boolean canMove(Spot start, Spot end, Board board) throws Exception
 	{	  		  
 		  if (end.getPiece() != null && start.getY() == end.getY()) {
@@ -38,6 +42,10 @@ public class Pawn extends Piece {
 		  return false;
 	}
 	
+	/**
+	 * check if the pawn has moved from its original spot
+	 * @return - if the pawn has moved from its original spot
+	 */
 	public boolean isMoved()
 	{
 		boolean moved = true;

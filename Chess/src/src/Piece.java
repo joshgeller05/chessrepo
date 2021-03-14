@@ -14,21 +14,38 @@ public abstract class Piece {
         this.setWhite(white); 
     } 
   
+    /**
+     * 
+     * @return - whether this piece is white or not
+     */
     public boolean isWhite() 
     { 
         return this.white; 
     } 
   
+    /**
+     * set whether this piece is white or not
+     * @param white
+     */
     public void setWhite(boolean white) 
     { 
         this.white = white; 
     } 
     
+    /**
+     * resets piece's moves
+     */
     public void resetMoves()
     {
     	moves.clear();
     }
     
+    /**
+     * 
+     * @param board
+     * @return list of moves this piece on a given board
+     * @throws Exception
+     */
 	@SuppressWarnings("unchecked")
 	public List<Spot> getMoves(Board board) throws Exception {
 		Spot start = new Spot(this.getX(),this.getY(),this);
@@ -48,6 +65,14 @@ public abstract class Piece {
 		return moves;
 	} 
 	
+	/**
+	 * implemented in each piece
+	 * @param start - where piece starts move
+	 * @param end - where piece ends move
+	 * @param board - given board
+	 * @return - whether piece can move to end spot
+	 * @throws Exception
+	 */
 	public abstract boolean canMove(Spot start, Spot end, Board board) throws Exception;
 
     public abstract PieceType type();

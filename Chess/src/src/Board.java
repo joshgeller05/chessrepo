@@ -11,6 +11,13 @@ public class Board {
     	this.resetBoard();
     } 
     
+    /**
+     * 
+     * @param x - of spot
+     * @param y - of spot
+     * @return - spot at given x&y
+     * @throws Exception
+     */
     public Spot getSpot(int x, int y) throws Exception 
     { 
   
@@ -21,12 +28,24 @@ public class Board {
         }
     } 
     
+    /**
+     * 
+     * @param x - of spot
+     * @param y - of spot
+     * @return - piece at given spot x&y
+     * @throws Exception
+     */
     public Piece getPieceAt(int x, int y) throws Exception
     {
     	Spot s = getSpot(x,y);
     	return s.getPiece();
     }
     
+    /**
+     * 
+     * @return all spots on board
+     * @throws Exception
+     */
     public ArrayList<Spot> getSpots() throws Exception
     {
     	ArrayList<Spot> spots = new ArrayList<Spot>();
@@ -38,6 +57,11 @@ public class Board {
     		 }
 		return spots;
     }
+    
+    
+    /**
+     * resets the board 
+     */
     public void resetBoard()
     {
         Spot[][] blankBoard = new Spot[8][8];
@@ -49,6 +73,11 @@ public class Board {
         this.board = blankBoard;
     }
     
+    /**
+     * set the board with the given lists of pieces
+     * @param white - pieces
+     * @param black - pieces
+     */
     public void setBoard(ArrayList<Piece> white, ArrayList<Piece> black)
     {
     	for(Piece p : white)
@@ -66,11 +95,19 @@ public class Board {
     	}
     }
     
+    /**
+     * set spot on board
+     * @param spot
+     */
     public void setSpot(Spot spot)
     {
     	board[spot.getX()][spot.getY()] = spot;
     }
     
+    /**
+     * 
+     * @return length of board
+     */
     public int getLength()
     {
     	return board.length;
