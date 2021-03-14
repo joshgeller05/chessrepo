@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1610899662507" analysisTimestamp="1610899634752" release="">
+  <Project projectName="Chess">
+    <Jar>C:\Users\Geller\git\chessrepo\Chess\bin</Jar>
+    <AuxClasspathEntry>C:\Users\Geller\git\chessrepo\Chess\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_161\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Geller\git\chessrepo\Chess\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="Board">
+      <SourceLine classname="Board" sourcefile="Board.java" sourcepath="Board.java"/>
+    </Class>
+    <Field classname="Board" name="boxes" signature="[[LSpot;" isStatic="false">
+      <SourceLine classname="Board" sourcefile="Board.java" sourcepath="Board.java"/>
+    </Field>
+    <SourceLine classname="Board" start="2" end="2" startBytecode="13" endBytecode="13" sourcefile="Board.java" sourcepath="Board.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1">
+    <Class classname="Piece">
+      <SourceLine classname="Piece" sourcefile="Piece.java" sourcepath="Piece.java"/>
+    </Class>
+    <Field classname="Piece" name="black" signature="Z" isStatic="false">
+      <SourceLine classname="Piece" start="4" end="4" startBytecode="0" endBytecode="0" sourcefile="Piece.java" sourcepath="Piece.java"/>
+    </Field>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 17 Jan 2021 11:07:03 -0500" total_classes="8" referenced_classes="16" total_bugs="2" total_size="64" num_packages="1" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="21.81" clock_seconds="136.17" peak_mbytes="430.85" alloc_mbytes="1024.00" gc_seconds="0.08" priority_2="2">
+    <PackageStats package="" total_bugs="2" total_types="8" total_size="64" priority_2="2">
+      <ClassStats class="Bishop" sourceFile="Bishop.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="Board" sourceFile="Board.java" interface="false" size="6" bugs="1" priority_2="1"/>
+      <ClassStats class="King" sourceFile="King.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="Knight" sourceFile="Knight.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="Pawn" sourceFile="Pawn.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="Piece" sourceFile="Piece.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="Rook" sourceFile="Rook.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="Spot" sourceFile="Spot.java" interface="false" size="25" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="822" invocations="2" avgMicrosecondsPerInvocation="411462" maxMicrosecondsPerInvocation="565809" standardDeviationMircosecondsPerInvocation="154347"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="259" invocations="303" avgMicrosecondsPerInvocation="857" maxMicrosecondsPerInvocation="28830" standardDeviationMircosecondsPerInvocation="2838"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="199" invocations="301" avgMicrosecondsPerInvocation="661" maxMicrosecondsPerInvocation="25774" standardDeviationMircosecondsPerInvocation="2112"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="58" invocations="16" avgMicrosecondsPerInvocation="3655" maxMicrosecondsPerInvocation="20856" standardDeviationMircosecondsPerInvocation="6167"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1610899662480" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

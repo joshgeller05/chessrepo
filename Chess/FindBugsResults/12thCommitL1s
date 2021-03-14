@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1613858146780" analysisTimestamp="1613858145603" release="">
+  <Project projectName="Chess">
+    <Jar>C:\Users\Geller\git\chessrepo\Chess\bin</Jar>
+    <AuxClasspathEntry>C:\Users\Geller\git\chessrepo\Chess\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.jupiter.api_5.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.jupiter.engine_5.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.jupiter.params_5.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.platform.commons_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.platform.engine_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.platform.launcher_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.platform.runner_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.platform.suite.api_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit.vintage.engine_4.12.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.opentest4j_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.apiguardian_1.0.0.v20170910-2246.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Geller\.p2\pool\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_161\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Geller\git\chessrepo\Chess\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 20 Feb 2021 18:28:07 -0500" total_classes="21" referenced_classes="57" total_bugs="0" total_size="975" num_packages="3" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="6.75" clock_seconds="7.32" peak_mbytes="655.18" alloc_mbytes="1024.00" gc_seconds="0.12">
+    <PackageStats package="Driver" total_bugs="0" total_types="1" total_size="7">
+      <ClassStats class="Driver.Driver" sourceFile="Driver.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="src" total_bugs="0" total_types="11" total_size="496">
+      <ClassStats class="src.Bishop" sourceFile="Bishop.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="src.Board" sourceFile="Board.java" interface="false" size="43" bugs="0"/>
+      <ClassStats class="src.Game" sourceFile="Game.java" interface="false" size="118" bugs="0"/>
+      <ClassStats class="src.King" sourceFile="King.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="src.Knight" sourceFile="Knight.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="src.Pawn" sourceFile="Pawn.java" interface="false" size="30" bugs="0"/>
+      <ClassStats class="src.Piece" sourceFile="Piece.java" interface="false" size="76" bugs="0"/>
+      <ClassStats class="src.PieceType" sourceFile="PieceType.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="src.Queen" sourceFile="Queen.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="src.Rook" sourceFile="Rook.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="src.Spot" sourceFile="Spot.java" interface="false" size="79" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="test" total_bugs="0" total_types="9" total_size="472">
+      <ClassStats class="test.TestBishop" sourceFile="TestBishop.java" interface="false" size="36" bugs="0"/>
+      <ClassStats class="test.TestBoard" sourceFile="TestBoard.java" interface="false" size="37" bugs="0"/>
+      <ClassStats class="test.TestGame" sourceFile="TestGame.java" interface="false" size="97" bugs="0"/>
+      <ClassStats class="test.TestKing" sourceFile="TestKing.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="test.TestKnight" sourceFile="TestKnight.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="test.TestPawn" sourceFile="TestPawn.java" interface="false" size="56" bugs="0"/>
+      <ClassStats class="test.TestPiece" sourceFile="TestPiece.java" interface="false" size="61" bugs="0"/>
+      <ClassStats class="test.TestRook" sourceFile="TestRook.java" interface="false" size="62" bugs="0"/>
+      <ClassStats class="test.TestSpot" sourceFile="TestSpot.java" interface="false" size="64" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="188" invocations="498" avgMicrosecondsPerInvocation="378" maxMicrosecondsPerInvocation="19303" standardDeviationMircosecondsPerInvocation="1070"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="116" invocations="2" avgMicrosecondsPerInvocation="58075" maxMicrosecondsPerInvocation="98721" standardDeviationMircosecondsPerInvocation="40646"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="74" invocations="500" avgMicrosecondsPerInvocation="149" maxMicrosecondsPerInvocation="3080" standardDeviationMircosecondsPerInvocation="145"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="66" invocations="127" avgMicrosecondsPerInvocation="520" maxMicrosecondsPerInvocation="39580" standardDeviationMircosecondsPerInvocation="3493"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="65" invocations="127" avgMicrosecondsPerInvocation="515" maxMicrosecondsPerInvocation="27368" standardDeviationMircosecondsPerInvocation="2452"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.XMLFactoryBypass" totalMilliseconds="44" invocations="21" avgMicrosecondsPerInvocation="2117" maxMicrosecondsPerInvocation="43646" standardDeviationMircosecondsPerInvocation="9286"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="39" invocations="57" avgMicrosecondsPerInvocation="689" maxMicrosecondsPerInvocation="5799" standardDeviationMircosecondsPerInvocation="1227"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="33" invocations="21" avgMicrosecondsPerInvocation="1612" maxMicrosecondsPerInvocation="29873" standardDeviationMircosecondsPerInvocation="6320"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="32" invocations="127" avgMicrosecondsPerInvocation="257" maxMicrosecondsPerInvocation="1391" standardDeviationMircosecondsPerInvocation="298"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="31" invocations="57" avgMicrosecondsPerInvocation="547" maxMicrosecondsPerInvocation="7709" standardDeviationMircosecondsPerInvocation="1156"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="28" invocations="247" avgMicrosecondsPerInvocation="116" maxMicrosecondsPerInvocation="948" standardDeviationMircosecondsPerInvocation="138"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="27" invocations="127" avgMicrosecondsPerInvocation="213" maxMicrosecondsPerInvocation="1370" standardDeviationMircosecondsPerInvocation="227"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="23" invocations="127" avgMicrosecondsPerInvocation="188" maxMicrosecondsPerInvocation="1416" standardDeviationMircosecondsPerInvocation="229"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="21" invocations="127" avgMicrosecondsPerInvocation="168" maxMicrosecondsPerInvocation="900" standardDeviationMircosecondsPerInvocation="190"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="16" invocations="102" avgMicrosecondsPerInvocation="166" maxMicrosecondsPerInvocation="798" standardDeviationMircosecondsPerInvocation="176"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="12" invocations="461" avgMicrosecondsPerInvocation="28" maxMicrosecondsPerInvocation="530" standardDeviationMircosecondsPerInvocation="44"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="12" invocations="57" avgMicrosecondsPerInvocation="224" maxMicrosecondsPerInvocation="2201" standardDeviationMircosecondsPerInvocation="378"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1613858146780" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

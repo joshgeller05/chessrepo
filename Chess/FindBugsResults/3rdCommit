@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1610902785717" analysisTimestamp="1610902783800" release="">
+  <Project projectName="Chess">
+    <Jar>C:\Users\Geller\git\chessrepo\Chess\bin</Jar>
+    <AuxClasspathEntry>C:\Users\Geller\git\chessrepo\Chess\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_161\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Geller\git\chessrepo\Chess\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="DM_BOXED_PRIMITIVE_FOR_PARSING" priority="1" rank="16" abbrev="Bx" category="PERFORMANCE" first="1">
+    <Class classname="src.Game">
+      <SourceLine classname="src.Game" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    </Class>
+    <Method classname="src.Game" name="getPiece" signature="(Ljava/lang/String;Z)Lsrc/Piece;" isStatic="false">
+      <SourceLine classname="src.Game" start="68" end="101" startBytecode="0" endBytecode="376" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="intValue" signature="()I" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.Integer"/>
+    </Method>
+    <Method classname="java.lang.Integer" name="parseInt" signature="(Ljava/lang/String;)I" isStatic="true" role="SHOULD_CALL"/>
+    <SourceLine classname="src.Game" start="70" end="70" startBytecode="23" endBytecode="23" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    <SourceLine classname="src.Game" start="70" end="70" startBytecode="23" endBytecode="23" sourcefile="Game.java" sourcepath="src/Game.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="src.Game">
+      <SourceLine classname="src.Game" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    </Class>
+    <Method classname="src.Game" name="start" signature="()V" isStatic="false">
+      <SourceLine classname="src.Game" start="20" end="31" startBytecode="0" endBytecode="191" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner"/>
+    </Method>
+    <SourceLine classname="src.Game" start="20" end="20" startBytecode="7" endBytecode="7" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    <SourceLine classname="src.Game" start="20" end="20" startBytecode="7" endBytecode="7" sourcefile="Game.java" sourcepath="src/Game.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="src.Game">
+      <SourceLine classname="src.Game" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    </Class>
+    <Field classname="src.Game" name="board" signature="Lsrc/Board;" isStatic="false">
+      <SourceLine classname="src.Game" sourcefile="Game.java" sourcepath="src/Game.java"/>
+    </Field>
+    <SourceLine classname="src.Game" start="12" end="12" startBytecode="12" endBytecode="12" sourcefile="Game.java" sourcepath="src/Game.java"/>
+  </BugInstance>
+  <BugInstance type="EQ_SELF_USE_OBJECT" priority="2" rank="8" abbrev="Eq" category="CORRECTNESS" first="1">
+    <Class classname="src.Piece">
+      <SourceLine classname="src.Piece" sourcefile="Piece.java" sourcepath="src/Piece.java"/>
+    </Class>
+    <Method classname="src.Piece" name="equals" signature="(Lsrc/Piece;)Z" isStatic="false">
+      <SourceLine classname="src.Piece" start="46" end="62" startBytecode="0" endBytecode="152" sourcefile="Piece.java" sourcepath="src/Piece.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="HE_EQUALS_USE_HASHCODE" priority="2" rank="16" abbrev="HE" category="BAD_PRACTICE" first="1">
+    <Class classname="src.Piece">
+      <SourceLine classname="src.Piece" sourcefile="Piece.java" sourcepath="src/Piece.java"/>
+    </Class>
+    <Method classname="src.Piece" name="equals" signature="(Lsrc/Piece;)Z" isStatic="false">
+      <SourceLine classname="src.Piece" start="46" end="62" startBytecode="0" endBytecode="152" sourcefile="Piece.java" sourcepath="src/Piece.java"/>
+    </Method>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 17 Jan 2021 11:58:19 -0500" total_classes="12" referenced_classes="38" total_bugs="5" total_size="229" num_packages="1" java_version="1.8.0_161" vm_version="25.161-b12" cpu_seconds="8.64" clock_seconds="9.08" peak_mbytes="727.54" alloc_mbytes="1024.00" gc_seconds="0.03" priority_2="3" priority_1="2">
+    <PackageStats package="src" total_bugs="5" total_types="12" total_size="229" priority_2="3" priority_1="2">
+      <ClassStats class="src.Bishop" sourceFile="Bishop.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="src.Board" sourceFile="Board.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="src.Driver" sourceFile="Driver.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="src.Game" sourceFile="Game.java" interface="false" size="84" bugs="3" priority_2="1" priority_1="2"/>
+      <ClassStats class="src.King" sourceFile="King.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="src.Knight" sourceFile="Knight.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="src.Pawn" sourceFile="Pawn.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="src.Piece" sourceFile="Piece.java" interface="false" size="40" bugs="2" priority_2="2"/>
+      <ClassStats class="src.PieceType" sourceFile="PieceType.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="src.Queen" sourceFile="Queen.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="src.Rook" sourceFile="Rook.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="src.Spot" sourceFile="Spot.java" interface="false" size="25" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="415" invocations="2" avgMicrosecondsPerInvocation="207644" maxMicrosecondsPerInvocation="241636" standardDeviationMircosecondsPerInvocation="33989"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="248" invocations="395" avgMicrosecondsPerInvocation="628" maxMicrosecondsPerInvocation="16738" standardDeviationMircosecondsPerInvocation="1955"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="208" invocations="393" avgMicrosecondsPerInvocation="529" maxMicrosecondsPerInvocation="73957" standardDeviationMircosecondsPerInvocation="4002"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="125" invocations="49" avgMicrosecondsPerInvocation="2562" maxMicrosecondsPerInvocation="84431" standardDeviationMircosecondsPerInvocation="12347"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="114" invocations="12" avgMicrosecondsPerInvocation="9562" maxMicrosecondsPerInvocation="114603" standardDeviationMircosecondsPerInvocation="31671"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="84" invocations="49" avgMicrosecondsPerInvocation="1716" maxMicrosecondsPerInvocation="42413" standardDeviationMircosecondsPerInvocation="7295"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="49" invocations="12" avgMicrosecondsPerInvocation="4138" maxMicrosecondsPerInvocation="49271" standardDeviationMircosecondsPerInvocation="13608"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="46" invocations="38" avgMicrosecondsPerInvocation="1215" maxMicrosecondsPerInvocation="12537" standardDeviationMircosecondsPerInvocation="2711"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="42" invocations="3" avgMicrosecondsPerInvocation="14255" maxMicrosecondsPerInvocation="24503" standardDeviationMircosecondsPerInvocation="10287"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InconsistentAnnotations" totalMilliseconds="39" invocations="12" avgMicrosecondsPerInvocation="3258" maxMicrosecondsPerInvocation="38950" standardDeviationMircosecondsPerInvocation="10761"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="38" invocations="38" avgMicrosecondsPerInvocation="1009" maxMicrosecondsPerInvocation="33207" standardDeviationMircosecondsPerInvocation="5298"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="33" invocations="38" avgMicrosecondsPerInvocation="872" maxMicrosecondsPerInvocation="25275" standardDeviationMircosecondsPerInvocation="4024"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1610902785717" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>
